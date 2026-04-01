@@ -7,12 +7,13 @@ LABEL maintainer="github@sytone.com" \
       org.opencontainers.image.description="Hosted Obsidian instance allowing access via web browser"
 
 # Set version label
-ARG OBSIDIAN_VERSION=1.7.7
+ARG OBSIDIAN_VERSION=1.8.9
 
 # Update and install extra packages
 RUN echo "**** install packages ****" && \
     apt-get update && \
-    apt-get install -y --no-install-recommends curl libgtk-3-0 libnotify4 libatspi2.0-0 libsecret-1-0 libnss3 desktop-file-utils fonts-noto-color-emoji git ssh-askpass && \
+    apt-get install -y --no-install-recommends ca-certificates curl libgtk-3-0 libnotify4 libatspi2.0-0 libsecret-1-0 libnss3 desktop-file-utils fonts-noto-color-emoji git ssh-askpass && \
+    update-ca-certificates && \
     apt-get autoclean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # Download and install Obsidian

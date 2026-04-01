@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "Root",
+			"path": "."
+		},
+		{
+			"name": "Roots-Root",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+      "**/obsidian-remote": true,
+	  
+    },
+	}
+}
